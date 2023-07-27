@@ -18,19 +18,19 @@
 
 # 1 Написати рекурсивну функцію знаходження ступеня числа.
 
-# def expo(number: int, power: int) -> int:
-#     if power == 0:
-#         return 1
-#     else:
-#         return number * expo(number, power - 1)
+def expo(number: int, power: int) -> int:
+    if power == 0:
+        return 1
+    else:
+        return number * expo(number, power - 1)
 
 # Написати рекурсивну функцію, яка виводить N зірок у ряд, число N задає користувач.
 # Проілюструйте роботу функції прикладом. (Протестувати)
 
-# def stars(number):
-#     if number != 0:
-#         print("*", end="")
-#         return stars(number - 1)
+def stars(number):
+    if number != 0:
+        print("*", end="")
+        return stars(number - 1)
 
 
 # Завдання 3.
@@ -45,13 +45,14 @@ def middle_sum(number1, number2, x=0):
 
 try:
 
-    # number, power = map(int, input("Pls input number and power: ").split())
-    # stars_number = int(input("Pls input number of stars: "))
+    number, power = map(int, input("Pls input number and power: ").split())
+    stars_number = int(input("Pls input number of stars: "))
     number1, number2 = map(int, input("Pls input numbers, summ between, you want to find: ").split())
 
-
-    # print(f"Task one number is: {expo(number, power)}")
-    # stars(stars_number)
+    print(f"Task one number is: {expo(number, power)}")
+    print("Stars incoming", end= " ")
+    stars(stars_number)
+    print()
     print(middle_sum(number1, number2))
 
 except Exception as e:
